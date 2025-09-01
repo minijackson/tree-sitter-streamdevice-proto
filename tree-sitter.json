@@ -1,0 +1,27 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "streamdevice_proto",
+      "path": ".",
+      "scope": "source.streamdevice_proto",
+      "file-types": [
+        "streamdevice_proto"
+      ],
+      "injection-regex": "^streamdevice_proto$",
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "links": {
+      "repository": "https://github.com/minijackson/tree-sitter-streamdevice_proto"
+    },
+    "version": "0.1.0",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Rémi NICOLE"
+      }
+    ]
+  }
+}
