@@ -1,4 +1,4 @@
-module github.com/minijackson/tree-sitter-streamdevice_proto
+module github.com/minijackson/tree-sitter-streamdevice-proto
 
 go 1.22
 

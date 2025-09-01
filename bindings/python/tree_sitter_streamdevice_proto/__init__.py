@@ -1,4 +1,4 @@
-"""StreamdeviceProto grammar for tree-sitter"""
+"""tree-sitter grammar for StreamDevice's .proto files"""
 
 from importlib.resources import files as _files
 

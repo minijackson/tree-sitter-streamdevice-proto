@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-streamdevice-proto
         VERSION "0.1.0"
-        DESCRIPTION "StreamdeviceProto grammar for tree-sitter"
-        HOMEPAGE_URL "https://github.com/minijackson/tree-sitter-streamdevice_proto"
+        DESCRIPTION "tree-sitter grammar for StreamDevice's .proto files"
+        HOMEPAGE_URL "https://github.com/minijackson/tree-sitter-streamdevice-proto"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

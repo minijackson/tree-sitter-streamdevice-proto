@@ -1,11 +1,12 @@
 {
   "name": "tree-sitter-streamdevice-proto",
   "version": "0.1.0",
-  "description": "StreamdeviceProto grammar for tree-sitter",
-  "repository": "https://github.com/minijackson/tree-sitter-streamdevice_proto",
+  "description": "tree-sitter grammar for StreamDevice's .proto files",
+  "repository": "https://github.com/minijackson/tree-sitter-streamdevice-proto",
   "license": "MIT",
   "author": {
-    "name": "Rémi NICOLE"
+    "name": "Rémi NICOLE",
+    "email": "remi.nicole@cea.fr"
   },
   "main": "bindings/node",
   "types": "bindings/node",
@@ -13,7 +14,8 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "streamdevice_proto"
+    "epics",
+    "streamdevice"
   ],
   "files": [
     "grammar.js",

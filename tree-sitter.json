@@ -6,21 +6,24 @@
       "path": ".",
       "scope": "source.streamdevice_proto",
       "file-types": [
-        "streamdevice_proto"
+        "proto"
       ],
-      "injection-regex": "^streamdevice_proto$",
-      "highlights": "queries/highlights.scm"
+      "injection-regex": "^(streamdevice-)?proto$",
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm"
     }
   ],
   "metadata": {
     "links": {
-      "repository": "https://github.com/minijackson/tree-sitter-streamdevice_proto"
+      "repository": "https://github.com/minijackson/tree-sitter-streamdevice-proto"
     },
     "version": "0.1.0",
     "license": "MIT",
+    "description": "tree-sitter grammar for StreamDevice's .proto files",
     "authors": [
       {
-        "name": "Rémi NICOLE"
+        "name": "Rémi NICOLE",
+        "email": "remi.nicole@cea.fr"
       }
     ]
   }

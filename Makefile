@@ -3,7 +3,7 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-streamdevice-proto
-HOMEPAGE_URL := https://github.com/minijackson/tree-sitter-streamdevice_proto
+HOMEPAGE_URL := https://github.com/minijackson/tree-sitter-streamdevice-proto
 VERSION := 0.1.0
 
 # repository

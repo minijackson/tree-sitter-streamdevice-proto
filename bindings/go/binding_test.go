@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	tree_sitter "github.com/tree-sitter/go-tree-sitter"
-	tree_sitter_streamdevice_proto "github.com/minijackson/tree-sitter-streamdevice_proto/bindings/go"
+	tree_sitter_streamdevice_proto "github.com/minijackson/tree-sitter-streamdevice-proto/bindings/go"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
