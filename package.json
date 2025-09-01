@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-streamdevice-proto",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "tree-sitter grammar for StreamDevice's .proto files",
   "repository": "https://github.com/minijackson/tree-sitter-streamdevice-proto",
   "license": "MIT",
