@@ -26,8 +26,8 @@ def __getattr__(name):
 
 __all__ = [
     "language",
-    # "HIGHLIGHTS_QUERY",
-    # "INJECTIONS_QUERY",
+    "HIGHLIGHTS_QUERY",
+    "INJECTIONS_QUERY",
     # "LOCALS_QUERY",
     # "TAGS_QUERY",
 ]
