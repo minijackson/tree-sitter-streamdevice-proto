@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tree-sitter-streamdevice-proto"
 description = "tree-sitter grammar for StreamDevice's .proto files"
-version = "0.1.1"
+version = "0.1.2"
 keywords = ["incremental", "parsing", "tree-sitter", "epics", "streamdevice"]
 classifiers = [
   "Intended Audience :: Developers",
