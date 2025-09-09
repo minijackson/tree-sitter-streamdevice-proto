@@ -30,7 +30,7 @@ module.exports = grammar({
       seq("$", alias(token.immediate(IDENTIFIER), $.variable_name)),
 
     _value: ($) => choice($.string, $.keyword),
-    keyword: ($) => choice("Error", "Ignore"),
+    keyword: ($) => choice(/error/i, /ignore/i),
 
     function: ($) =>
       seq(

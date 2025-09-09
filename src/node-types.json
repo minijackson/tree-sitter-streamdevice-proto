@@ -514,14 +514,6 @@
     "named": false
   },
   {
-    "type": "Error",
-    "named": false
-  },
-  {
-    "type": "Ignore",
-    "named": false
-  },
-  {
     "type": "T",
     "named": false
   },

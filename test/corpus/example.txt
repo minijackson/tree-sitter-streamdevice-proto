@@ -126,3 +126,24 @@ debug {
    (string
 	(quoted_literal
 	 (format_converter (number)))))))
+
+===
+Spy
+===
+
+spy {
+	extraInput=ignore;
+	PollPeriod = 10;
+	in "%39c";
+}
+
+---
+
+(source_file
+ (function
+  (function_name)
+  (assignment (variable_name) (keyword))
+  (assignment (variable_name) (string (number)))
+  (command
+   (command_name)
+   (string (quoted_literal (format_converter (number)))))))
