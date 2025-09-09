@@ -18,7 +18,7 @@ A = "Hello world\r\n";
 Mixed sequence
 ==============
 
-A = 'Hello',0x20,"world",CR,LF;
+A = 'Hello',0x20,"world""",CR LF;
 
 ---
 
@@ -28,6 +28,7 @@ A = 'Hello',0x20,"world",CR,LF;
   (string
    (quoted_literal)
    (number)
+   (quoted_literal)
    (quoted_literal)
    (ascii_name)
    (ascii_name))))
