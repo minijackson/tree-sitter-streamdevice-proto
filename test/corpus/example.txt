@@ -51,8 +51,8 @@ debug {
  (assignment
   (variable_name)
   (string
-   (number (ascii_name))
-   (number (ascii_name))))
+   (ascii_name)
+   (ascii_name)))
 
  (comment)
  (comment)
@@ -125,4 +125,4 @@ debug {
    (command_name)
    (string
 	(quoted_literal
-	 (format_converter (number_literal)))))))
+	 (format_converter (number)))))))

@@ -54,3 +54,26 @@ a { out "%{0|1}" }
 	  (format_enum
 	   (enum_specifier (enum_constant))
 	   (enum_specifier (enum_constant)))))))))
+
+============
+Example "lo"
+============
+
+lo {
+	out '%(NAME)s = %i = %#x = %b(bin) = %D(BCD)';
+}
+
+---
+
+(source_file
+ (function
+  (function_name)
+  (command
+   (command_name)
+   (string
+	(quoted_literal
+	 (format_converter (format_inout (record_name)))
+	 (format_converter)
+	 (format_converter (format_flag))
+	 (format_converter)
+	 (format_converter))))))

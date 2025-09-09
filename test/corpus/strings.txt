@@ -27,10 +27,10 @@ A = 'Hello',0x20,"world",CR,LF;
   (variable_name)
   (string
    (quoted_literal)
-   (number (number_literal))
+   (number)
    (quoted_literal)
-   (number (ascii_name))
-   (number (ascii_name)))))
+   (ascii_name)
+   (ascii_name))))
 
 ===============
 Number sequence
@@ -44,16 +44,29 @@ A = 72 101 108 108 111 32 119 111 114 108 100 13 10;
  (assignment
   (variable_name)
   (string
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal))
-   (number (number_literal)))))
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number)
+   (number))))
+
+=====
+CR LF
+=====
+
+A = cr lf;
+
+---
+
+(source_file
+ (assignment
+  (variable_name)
+  (string (ascii_name) (ascii_name))))

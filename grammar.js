@@ -7,7 +7,7 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const IDENTIFIER = /[a-zA-Z]\w*/;
+const IDENTIFIER = /[a-zA-Z][\w-]*/;
 
 module.exports = grammar({
   name: "streamdevice_proto",
@@ -60,9 +60,9 @@ module.exports = grammar({
     string: ($) =>
       seq(
         repeat(
-          seq(choice($.variable, $.number, $.quoted_literal), optional(","))
+          seq(choice($.variable, $.number, $.ascii_name, $.quoted_literal), optional(","))
         ),
-        choice($.variable, $.number, $.quoted_literal)
+        choice($.variable, $.number, $.ascii_name, $.quoted_literal)
       ),
 
     quoted_literal: ($) =>
@@ -123,19 +123,19 @@ module.exports = grammar({
         optional($.format_flag),
         field(
           "width",
-          optional(alias(token.immediate(/[0-9]+/), $.number_literal))
+          optional(alias(token.immediate(/[0-9]+/), $.number))
         ),
         optional(
           seq(
             token.immediate("."),
             field(
               "precision",
-              alias(token.immediate(/[0-9]+/), $.number_literal)
+              alias(token.immediate(/[0-9]+/), $.number)
             )
           )
         ),
         choice(
-          /[feEgGdiuoxXscbrRm]/,
+          /[feEgGdDiuoxXscbrRm]/,
           seq(token.immediate("["), optional($.charset), token.immediate("]")),
           seq(token.immediate("{"), $.format_enum, token.immediate("}")),
           seq(token.immediate("B"), $._char, $._char),
@@ -199,11 +199,11 @@ module.exports = grammar({
     field_name: ($) =>
       repeat1(prec(-1, choice($._identifier, $.escape_sequence))),
 
-    number: ($) => choice($.ascii_name, $.number_literal),
-    number_literal: ($) =>
-      seq(optional("-"), choice(/0x[a-fA-F0-9]+/, /0[0-7]+/, /[0-9]+/)),
+    // number: ($) => choice($.ascii_name, $.number_literal),
+    number: ($) =>
+      seq(optional("-"), choice(/0x[A-F0-9]+/i, /0[0-7]+/, /[0-9]+/)),
 
-    ascii_name: ($) => /[A-Z][A-Z0-9]*/,
+    ascii_name: ($) => choice(/[A-Z][A-Z0-9]*/i, "?"),
 
     _identifier: ($) => IDENTIFIER,
   },
