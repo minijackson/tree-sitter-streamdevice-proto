@@ -2,7 +2,7 @@
 Variable expansion
 ==================
 
-a { out "\$var" }
+a { out "\$var\${var}$notvar" }
 
 ---
 
@@ -13,6 +13,7 @@ a { out "\$var" }
    (command_name)
    (string
 	(quoted_literal
+	 (variable_expansion (variable_name))
 	 (variable_expansion (variable_name)))))))
 
 ===========================
@@ -31,3 +32,31 @@ a { out "\$1" }
    (string
 	(quoted_literal
 	 (variable_expansion (variable_name)))))))
+
+=================
+In enum constants
+=================
+
+s0 = false;
+s1 = true;
+bo {
+	out '%{\${s0}|\${s1}}';
+}
+
+---
+
+(source_file
+ (assignment (variable_name) (string (ascii_name)))
+ (assignment (variable_name) (string (ascii_name)))
+ (function
+  (function_name)
+  (command
+   (command_name)
+   (string
+	(quoted_literal
+	 (format_converter
+	  (format_enum
+	   (enum_specifier
+		(enum_constant (variable_expansion (variable_name))))
+	   (enum_specifier
+		(enum_constant (variable_expansion (variable_name)))))))))))

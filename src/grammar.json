@@ -487,35 +487,77 @@
       }
     },
     "variable_expansion": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "IMMEDIATE_TOKEN",
-          "content": {
-            "type": "STRING",
-            "value": "\\$"
-          }
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "STRING",
+                "value": "\\$"
+              }
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "IMMEDIATE_TOKEN",
+                    "content": {
+                      "type": "PATTERN",
+                      "value": "[a-zA-Z][\\w-]*"
+                    }
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[1-9]"
+                  }
+                ]
+              },
+              "named": true,
+              "value": "variable_name"
+            }
+          ]
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "IMMEDIATE_TOKEN",
-                "content": {
-                  "type": "PATTERN",
-                  "value": "[a-zA-Z][\\w-]*"
-                }
-              },
-              {
-                "type": "PATTERN",
-                "value": "[1-9]"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "STRING",
+                "value": "\\${"
               }
-            ]
-          },
-          "named": true,
-          "value": "variable_name"
+            },
+            {
+              "type": "ALIAS",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "IMMEDIATE_TOKEN",
+                    "content": {
+                      "type": "PATTERN",
+                      "value": "[a-zA-Z][\\w-]*"
+                    }
+                  },
+                  {
+                    "type": "PATTERN",
+                    "value": "[1-9]"
+                  }
+                ]
+              },
+              "named": true,
+              "value": "variable_name"
+            },
+            {
+              "type": "STRING",
+              "value": "}"
+            }
+          ]
         }
       ]
     },
@@ -1026,8 +1068,17 @@
       ]
     },
     "enum_constant": {
-      "type": "PATTERN",
-      "value": "\\w+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "variable_expansion"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\w+"
+        }
+      ]
     },
     "_char": {
       "type": "CHOICE",
