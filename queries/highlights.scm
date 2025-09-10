@@ -22,7 +22,7 @@
 
 (keyword) @keyword
 
-(record_name) @type
-(field_name) @constant
+(record_name) @constant
+(field_name) @variable
 
 (number) @number
