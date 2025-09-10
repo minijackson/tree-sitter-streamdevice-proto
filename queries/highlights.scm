@@ -6,11 +6,13 @@
 
 [ (function_name) (command_name) (handler_name) ] @function
 [ "{" "}" "[" "]" "(" ")" "<" ">" "/" "#/" ] @punctuation.bracket
-[ "|" ";" "," ] @punctuation.delimiter
+(variable_expansion [ "\\${" "}" ] @punctuation.special)
+(format_converter [ "%" "{" "}" "[" "]" "(" ")" "<" ">" "#/" "/" ] @punctuation.special)
+[ "|" ";" "," "." ] @punctuation.delimiter
 [ "$" "\\$" "@" ] @operator
 
 (quoted_literal) @string
-(escape_sequence) @constant.builtin
+(escape_sequence) @string.escape
 
 (format_converter) @function.builtin
 (checksum_flag) @operator
