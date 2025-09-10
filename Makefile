@@ -4,7 +4,7 @@ endif
 
 LANGUAGE_NAME := tree-sitter-streamdevice-proto
 HOMEPAGE_URL := https://github.com/minijackson/tree-sitter-streamdevice-proto
-VERSION := 0.1.2
+VERSION := 0.2.0
 
 # repository
 SRC_DIR := src
