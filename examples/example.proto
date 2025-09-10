@@ -31,7 +31,7 @@ binary {
 
 # note the field access
 ai {
-	out "%(NAME)s [int] ? ";
+	out "%(NAME.RVAL)s [int] ? ";
 	in "%i";   # read to RVAL and convert
 }
 

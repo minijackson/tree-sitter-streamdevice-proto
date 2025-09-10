@@ -1,0 +1,53 @@
+Terminator = CR LF;
+#<- constant
+#          ^ operator
+#            ^ constant.builtin
+#               ^ constant.builtin
+#                 ^ punctuation.delimiter
+ReplyTimeout = 10000; # 10 sec is very long, for keyboard input
+#<- constant
+#            ^ operator
+#              ^ number
+#                     ^ comment
+#                       ^ comment
+
+binary {
+#<- function
+#      ^ punctuation.bracket
+	out "%B\x00\xff";
+	#<- function
+	#   ^ string
+	#    ^ punctuation.special
+	#     ^ function.builtin
+	#      ^ string.escape
+	#       ^ string.escape
+	#        ^ string.escape
+	#          ^ string.escape
+	#              ^ string
+	#               ^ punctuation.delimiter
+}
+
+ai {
+	out "%(NAME.RVAL)s [int] ? ";
+	#    ^ punctuation.special
+	#     ^ punctuation.special
+	#      ^ constant
+	#          ^ punctuation.delimiter
+	#           ^ variable.builtin
+	in "%i";   # read to RVAL and convert
+}
+
+bo {
+	out '%{\${s0}|\${s1}} = "%s"';
+	#    ^ punctuation.special
+	#     ^ punctuation.special
+	#      ^ punctuation.special
+	#       ^ punctuation.special
+	#        ^ punctuation.special
+	#         ^ constant
+	#            ^ punctuation.delimiter
+	#             ^ punctuation.special
+	#              ^ punctuation.special
+	#               ^ punctuation.special
+	#                ^ constant
+}
