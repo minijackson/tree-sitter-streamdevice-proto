@@ -1098,7 +1098,7 @@
     },
     "checksum_flag": {
       "type": "PATTERN",
-      "value": "[0+-]"
+      "value": "[0+-~]"
     },
     "checksum": {
       "type": "SYMBOL",

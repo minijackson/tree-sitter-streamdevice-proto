@@ -184,7 +184,7 @@ module.exports = grammar({
       seq($.enum_constant, optional(seq("=", choice($.number, "?")))),
     enum_constant: ($) => choice($.variable_expansion, /\w+/),
     _char: ($) => choice(token.immediate(/./), $.escape_sequence),
-    checksum_flag: ($) => /[0+-]/,
+    checksum_flag: ($) => /[0+-~]/,
     checksum: ($) => $._identifier,
     // Taken from:
     // https://github.com/tree-sitter/tree-sitter-javascript/blob/master/grammar.js
