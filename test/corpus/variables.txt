@@ -40,7 +40,7 @@ In enum constants
 s0 = false;
 s1 = true;
 bo {
-	out '%{\${s0}|\${s1}}';
+	out '%{\${s0}|the\${s1}}';
 }
 
 ---

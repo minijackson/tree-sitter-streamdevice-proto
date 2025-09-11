@@ -1068,17 +1068,20 @@
       ]
     },
     "enum_constant": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "variable_expansion"
-        },
-        {
-          "type": "PATTERN",
-          "value": "\\w+"
-        }
-      ]
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "variable_expansion"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\w+"
+          }
+        ]
+      }
     },
     "_char": {
       "type": "CHOICE",
