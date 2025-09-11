@@ -77,3 +77,27 @@ lo {
 	 (format_converter (format_flag))
 	 (format_converter)
 	 (format_converter))))))
+
+============================================
+Checksum with width, precision, and variable
+============================================
+
+checksum {
+    out "%s %0.1<\$1>";
+}
+
+---
+
+(source_file
+ (function
+  (function_name)
+  (command
+   (command_name)
+   (string
+	(quoted_literal
+	 (format_converter)
+	 (format_converter
+	  (number)
+	  (number)
+	  (checksum
+	   (variable_expansion (variable_name)))))))))

@@ -1104,8 +1104,20 @@
       "value": "[0+-~]"
     },
     "checksum": {
-      "type": "SYMBOL",
-      "name": "_identifier"
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "variable_expansion"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_identifier"
+          }
+        ]
+      }
     },
     "regex_pattern": {
       "type": "IMMEDIATE_TOKEN",
