@@ -1213,6 +1213,10 @@
           {
             "type": "SYMBOL",
             "name": "escape_sequence"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "variable_expansion"
           }
         ]
       }
@@ -1232,6 +1236,10 @@
             {
               "type": "SYMBOL",
               "name": "escape_sequence"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "variable_expansion"
             }
           ]
         }

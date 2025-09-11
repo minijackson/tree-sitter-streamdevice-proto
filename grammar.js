@@ -202,9 +202,9 @@ module.exports = grammar({
       repeat1(choice(alias(/[^)%]+/, $.thing), $.time_conversion_spec)),
     time_conversion_spec: ($) => token.immediate(/%[EO_0^#.-]?\d*[a-zA-Z+%]+/),
 
-    record_name: ($) => repeat1(choice(/[\w:]+/, $.escape_sequence)),
+    record_name: ($) => repeat1(choice(/[\w:]+/, $.escape_sequence, $.variable_expansion)),
     field_name: ($) =>
-      repeat1(prec(-1, choice($._identifier, $.escape_sequence))),
+      repeat1(prec(-1, choice($._identifier, $.escape_sequence, $.variable_expansion))),
 
     // number: ($) => choice($.ascii_name, $.number_literal),
     number: ($) =>

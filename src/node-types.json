@@ -120,6 +120,10 @@
         {
           "type": "escape_sequence",
           "named": true
+        },
+        {
+          "type": "variable_expansion",
+          "named": true
         }
       ]
     }
@@ -334,6 +338,10 @@
       "types": [
         {
           "type": "escape_sequence",
+          "named": true
+        },
+        {
+          "type": "variable_expansion",
           "named": true
         }
       ]

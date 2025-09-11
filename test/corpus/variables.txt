@@ -60,3 +60,30 @@ bo {
 		(enum_constant (variable_expansion (variable_name))))
 	   (enum_specifier
 		(enum_constant (variable_expansion (variable_name)))))))))))
+
+===================
+In I/O redirections
+===================
+
+s0 = false;
+s1 = true;
+bo {
+	out '%(the\${s0}bla\$s1)s';
+}
+
+---
+
+(source_file
+ (assignment (variable_name) (string (ascii_name)))
+ (assignment (variable_name) (string (ascii_name)))
+ (function
+  (function_name)
+  (command
+   (command_name)
+   (string
+	(quoted_literal
+	 (format_converter
+	  (format_inout
+	   (record_name
+	    (variable_expansion (variable_name))
+	    (variable_expansion (variable_name))))))))))
