@@ -1,0 +1,45 @@
+============
+Line comment
+============
+
+# hello
+in {
+# world
+	# world
+}
+
+---
+
+(source_file
+ (comment)
+ (function (function_name) (comment) (comment)))
+
+====================
+End-of-line comments
+====================
+
+in { # comment
+	in "hello"; # comment
+	@init { # comment
+	  bla # comment
+	} # comment
+} # comment
+
+---
+
+(source_file
+ (function
+  (function_name)
+  (comment)
+  (command
+   (command_name)
+   (string
+	(quoted_literal)))
+  (comment)
+  (handler
+   (handler_name)
+   (comment)
+   (function_name)
+   (comment))
+  (comment))
+ (comment))

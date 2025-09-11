@@ -76,11 +76,6 @@
     "fields": {}
   },
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "enum_constant",
     "named": true,
     "fields": {},
@@ -577,6 +572,11 @@
   {
     "type": "checksum_flag",
     "named": true
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "extra": true
   },
   {
     "type": "regex_pattern",

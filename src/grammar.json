@@ -45,17 +45,24 @@
       }
     },
     "comment": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "#"
-        },
-        {
-          "type": "PATTERN",
-          "value": ".*"
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": -10,
+        "content": {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "#"
+            },
+            {
+              "type": "PATTERN",
+              "value": ".*"
+            }
+          ]
         }
-      ]
+      }
     },
     "assignment": {
       "type": "SEQ",

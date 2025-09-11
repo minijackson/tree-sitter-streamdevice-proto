@@ -22,7 +22,7 @@ module.exports = grammar({
         )
       ),
 
-    comment: ($) => seq("#", /.*/),
+    comment: ($) => token(prec(-10, seq("#", /.*/))),
 
     assignment: ($) => seq($.variable_name, "=", $._value),
     variable_name: ($) => $._identifier,
